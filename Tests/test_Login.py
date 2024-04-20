@@ -1,5 +1,6 @@
 import time
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pytest
@@ -8,7 +9,7 @@ import pytest
 class Test_Login():
 
     def test_validLogin_scenario(self):
-        driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
         driver.get("https://www.rahulshettyacademy.com/locatorspractice/")
         driver.maximize_window()
         driver.find_element(By.XPATH,"//input[@id='inputUsername']").send_keys("KarryBoy")
@@ -20,7 +21,7 @@ class Test_Login():
         driver.close()
 
     def test_invalidLogin_scenario(self):
-        driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
         driver.get("https://www.rahulshettyacademy.com/locatorspractice/")
         driver.maximize_window()
         driver.find_element(By.XPATH, "//input[@id='inputUsername']").send_keys("KarryBoy")
