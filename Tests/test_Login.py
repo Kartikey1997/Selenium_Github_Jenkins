@@ -4,6 +4,8 @@ from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pytest
+import allure
+from allure_commons.types import AttachmentType
 
 
 class Test_Login():
