@@ -43,5 +43,5 @@ class Test_Login():
         driver.find_element(By.XPATH, "//button[text()='Sign In']").click()
         time.sleep(2)
         succesMessage = driver.find_element(By.XPATH, "//p[text()='* Incorrect username or password']").text
-        assert succesMessage.__eq__("* Incorrect username or password"),allure.attach(driver.get_screenshot_as_png(),"Login Failed", attachment_type=AttachmentType.PNG)
+        assert succesMessage.__eq__("* Incorrect username or password123"),allure.attach(driver.get_screenshot_as_png(),"Login Failed", attachment_type=AttachmentType.PNG)
         driver.close()
